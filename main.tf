@@ -16,7 +16,7 @@ resource "aws_instance" "aws_instance" {
   instance_type   = var.instance_type != null ? var.instance_type : "t2.micro"
   key_name        = var.key_name
   subnet_id       = var.subnet_id
-  security_groups = var.security_groups
+  vpc_security_group_ids = var.security_groups
   tags = merge(
     local.common_tags,
     {
